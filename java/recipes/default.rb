@@ -1,10 +1,3 @@
-#
-# Cookbook:: java
-# Recipe:: default
-#
-# Copyright:: 2017, The Authors, All Rights Reserved.
-
-file "/root/chef-repo/hello.txt" do
-	content "Hello"
-	action :create
+package "java-1.7.0-openjdk" do
+    action :install
 end
