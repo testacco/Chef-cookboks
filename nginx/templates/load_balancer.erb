@@ -1,0 +1,14 @@
+http{
+  upstream <%= @app_name  %>{
+    <% @ip_server.each do |server| %>
+      server <%= server %>;
+    <% end %>
+  }
+
+  server{
+    listen 80;
+    location / {
+      proxy_pass <%= @app_name %>;
+    }
+  }
+}
